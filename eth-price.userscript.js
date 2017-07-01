@@ -12,8 +12,11 @@
 
 (function ($, undefined) {
     $(function () {
+        
+        var eth_price = $.getJSON('https://coinmarketcap-nexuist.rhcloud.com/api/eth');
+        
         $(document).ready(function(){
-           // do the things!
+           console.log(eth_price);
         });
     });
 })(window.jQuery.noConflict(true));
