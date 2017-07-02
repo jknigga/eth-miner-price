@@ -13,13 +13,12 @@
 
 (function ($, undefined) {
     $(function () {
-        
         var eth_data;
-        $.getJSON('https://coinmarketcap-nexuist.rhcloud.com/api/eth', function (data) {
-            eth_data = data;
-        });
         
         $(document).ready(function(){
+            $.getJSON('https://coinmarketcap-nexuist.rhcloud.com/api/eth', function (data) {
+                eth_data = data;
+            });
            console.log(eth_data.price.usd);
         });
     });
