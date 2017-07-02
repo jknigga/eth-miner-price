@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ethereum Pricer
 // @namespace    https://github.com/jknigga/eth-miner-price
-// @version      0.1.1
+// @version      0.1.2
 // @description  Shows the price of Ethereum
 // @author       Jakob Knigga
 // @match        https://ethermine.org/miners/*
