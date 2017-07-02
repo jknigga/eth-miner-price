@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ethereum Pricer
 // @namespace    https://github.com/jknigga/eth-miner-price
-// @version      0.1
+// @version      0.1.1
 // @description  Shows the price of Ethereum
 // @author       Jakob Knigga
 // @match        https://ethermine.org/miners/*
@@ -13,10 +13,13 @@
 (function ($, undefined) {
     $(function () {
         
-        var eth_price = $.getJSON('https://coinmarketcap-nexuist.rhcloud.com/api/eth');
+        var eth_data;
+        $.getJSON('https://coinmarketcap-nexuist.rhcloud.com/api/eth', function (data) {
+            eth_data = data;
+        });
         
         $(document).ready(function(){
-           console.log(eth_price);
+           console.log(eth_data.price.usd);
         });
     });
 })(window.jQuery.noConflict(true));
