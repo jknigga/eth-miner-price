@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ethereum Pricer
 // @namespace    https://github.com/jknigga/eth-miner-price
-// @version      0.1.4
+// @version      0.1.8
 // @description  Shows the price of Ethereum
 // @author       Jakob Knigga
 // @match        https://ethermine.org/miners/*
@@ -25,6 +25,10 @@
              onload: function(xhr) {
               var data = eval("(" + xhr.responseText + ")");
               console.log(data.price.usd);
+              var eth = $('.progress').parent().find('h4').html();
+              var eth_parts = eth.split(" ");
+              var dollars = eth_parts[0] * data.price.usd;
+              $('.progress').parent().find('h4').after('<h5>$'+dollars.toFixed(2)+'</h5>');
             }
           });
         });
